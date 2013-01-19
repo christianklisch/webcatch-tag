@@ -1,0 +1,19 @@
+#summary How to install and use the WebCatch-tag
+#labels Phase-Deploy
+= Introduction =
+
+Follow the instruction of this howto to install and use the WebCatch-Tag in your webapplication.
+
+
+== Import as jar-File ==
+
+Steps to do:
+   * Download newest version of the WebCatch-Tag jar-file
+   * Copy this file to your lib-directory in e.g. ./WEB-INF
+   * Add this new jsp-tag into your jsp-file
+
+== Add as maven-dependency ==
+
+A newer version will be released as maven-dependency which you can add to your dependency-section in your project's pom.xml.
+
+== How to use in jsp-file ==
