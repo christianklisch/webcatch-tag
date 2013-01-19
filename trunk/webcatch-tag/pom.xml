@@ -6,8 +6,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WebCatch</name>
 	<description>Catch header or footer from third website and include extracted html-code in your jsp-site by using jsp-tag.</description>
-
 	<url>https://code.google.com/p/webcatch-tag/</url>
+
+	<organization>
+		<name>Christian Klisch</name>
+	</organization>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -20,8 +24,13 @@
 		</license>
 	</licenses>
 
-	<dependencies>
+	<developers>
+		<developer>
+			<name>Christian Klisch</name>
+		</developer>
+	</developers>
 
+	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
