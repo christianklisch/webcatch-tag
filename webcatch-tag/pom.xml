@@ -7,10 +7,19 @@
 	<name>WebCatch</name>
 	<description>Catch header or footer from third website and include extracted html-code in your jsp-site by using jsp-tag.</description>
 
-	<url>http://maven.apache.org</url>
+	<url>https://code.google.com/p/webcatch-tag/</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 	<dependencies>
 
 		<dependency>
