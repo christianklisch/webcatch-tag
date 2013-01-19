@@ -11,6 +11,6 @@ The WebCatch-Tag is a JSP-Tag to include a part of HTML-code of an external webs
 
 = Getting started =
 
-   * Add dependeny into your pom.xml
+   * Add dependency into your pom.xml
    * Add taglib in your jsp-file
    * Add WebCatch-Tag in jsp-file where to include external HTML-content
