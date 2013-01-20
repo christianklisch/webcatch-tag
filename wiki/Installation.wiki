@@ -17,3 +17,13 @@ Steps to do:
 A newer version will be released as maven-dependency which you can add to your dependency-section in your project's pom.xml.
 
 == How to use in jsp-file ==
+
+Add at the beginning of your jsp-file:
+{{{
+<%@ taglib uri="http://www.christian-klisch.de" prefix="ck"%>
+}}}
+
+Add in your jsp-code the WebCatch-Tag:
+{{{
+<ck:webcatch source="http://www.stiftung-ear.de/hersteller" htmltag="div" attribute="id" value="main" />
+}}}
