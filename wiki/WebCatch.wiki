@@ -3,3 +3,41 @@
 = What is the WebCatch-tag =
 
 The WebCatch-tag is a jsp-tag to include parts of an external website (e.g. footer). In case of a change on the external website the selected website-part will be loaded by your webserver and the extracted HTML-code is included into your jsp-file.
+
+
+== Include which part? ==
+
+You can select by html-tag-attributes, which part of the external website you want to include. The following example is the html-code of a footer:
+
+{{{
+<html>
+  <body>
+    <div id="main">
+      This is the main part
+    </div>
+    <div id="footer" class="column span">
+      Created at 12.01.2013 from M.Person
+    </div>
+  </body>
+</html>
+}}}
+
+
+== How to use in jsp-file ==
+
+Add at the beginning of your jsp-file:
+{{{
+<%@ taglib uri="http://www.christian-klisch.de" prefix="ck"%>
+}}}
+
+Add in your jsp-code the WebCatch-Tag:
+{{{
+<ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="main" />
+}}}
+
+This will include:
+{{{
+    <div id="footer" class="column span">
+      Created at 12.01.2013 from M.Person
+    </div>
+}}}
