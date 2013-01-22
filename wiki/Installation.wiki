@@ -48,9 +48,6 @@ Add in your jsp-code the WebCatch-Tag:
 
 This will include:
 {{{
-    <div id="main">
-      This is the main part
-    </div>
     <div id="footer" class="column span">
       Created at 12.01.2013 from M.Person
     </div>
