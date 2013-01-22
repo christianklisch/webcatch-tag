@@ -1,0 +1,5 @@
+#summary Decorator-Pattern for own code-manipulation
+
+= WebCatchDecorator =
+
+You can use own html-code manipulation methods by implementating the WebCatchDecorator.
