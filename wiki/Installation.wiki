@@ -25,5 +25,5 @@ Add at the beginning of your jsp-file:
 
 Add in your jsp-code the WebCatch-Tag:
 {{{
-<ck:webcatch source="http://www.stiftung-ear.de/hersteller" htmltag="div" attribute="id" value="main" />
+<ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="main" />
 }}}
