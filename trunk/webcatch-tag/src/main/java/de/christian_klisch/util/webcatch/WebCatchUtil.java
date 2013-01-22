@@ -24,7 +24,10 @@ import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -53,22 +56,24 @@ public final class WebCatchUtil
 	 * Stores all requested HTML-codes for x seconds (seconds are defined in
 	 * <em>resetAfter</em>).
 	 */
-	private HashMap<String, String>	results		= new HashMap<String, String>();
+	private Map<String, String>		results			= new HashMap<String, String>();
 
 	/**
 	 * Reset stored HTML-Codes after this count of seconds.
 	 */
-	private long					resetAfter	= 100;
+	private long					resetAfter		= 100;
 
 	/**
 	 * Stores last reset-time.
 	 */
-	private long					lastReset	= System.currentTimeMillis();
+	private long					lastReset		= System.currentTimeMillis();
 
 	/**
 	 * Singleton instance.
 	 */
-	private static WebCatchUtil		instance	= null;
+	private static WebCatchUtil		instance		= null;
+
+	private List<WebCatchDecorator>	decoratorList	= new ArrayList<WebCatchDecorator>();
 
 	private WebCatchUtil()
 	{
@@ -106,9 +111,22 @@ public final class WebCatchUtil
 		String key = source + htmltag + attribute + value;
 
 		if (results.get(key) != null)
-			return results.get(key);
+			return callDecorator(results.get(key));
 
-		return readWebTag(key, source, htmltag, attribute, value);
+		return callDecorator(readWebTag(key, source, htmltag, attribute, value));
+	}
+
+	/**
+	 * Call and execute user-implemented <em>WebCatchDecorator</em>.
+	 * 
+	 * @param htmlCode Input html-code.
+	 * @return By decorator manipulated html-code.
+	 */
+	private String callDecorator(String htmlCode)
+	{
+		for (WebCatchDecorator d : decoratorList)
+			htmlCode = d.changeHTMLCode(htmlCode);
+		return htmlCode;
 	}
 
 	/**
@@ -171,9 +189,9 @@ public final class WebCatchUtil
 		}
 		catch (Exception e)
 		{
-			return "exception occured: " + e.getMessage();
+			return "WebCatch-Tag: exception occured: " + e.getMessage();
 		}
-		return "no HTML found";
+		return "WebCatch-Tag: no HTML found";
 	}
 
 	/**
@@ -185,6 +203,24 @@ public final class WebCatchUtil
 	public void putWebHtml(String key, String webHmtl)
 	{
 		results.put(key, webHmtl);
+	}
+
+	/**
+	 * Add a new user-implemented decorator to manipulate HTML-code.
+	 * 
+	 * @param decorator user-implementation of <em>WebCatchDecorator</em>.
+	 */
+	public void addDecorator(WebCatchDecorator decorator)
+	{
+		decoratorList.add(decorator);
+	}
+
+	/**
+	 * Clear list of user-decorators.
+	 */
+	public void clearDecorator()
+	{
+		decoratorList.clear();
 	}
 
 	/**
@@ -200,13 +236,12 @@ public final class WebCatchUtil
 		URLConnection connection = new URL(source).openConnection();
 		connection.setConnectTimeout(10000);
 
-		// XML Daten einlesen
+		// read
 		ByteArrayOutputStream result = new ByteArrayOutputStream();
 		InputStream input = connection.getInputStream();
 		byte[] buffer = new byte[1000];
 		int amount = 0;
 
-		// Inhalt lesen
 		while (amount != -1)
 		{
 			result.write(buffer, 0, amount);
