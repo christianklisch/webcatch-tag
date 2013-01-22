@@ -3,13 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.christian_klisch</groupId>
 	<artifactId>webcatch</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>WebCatch</name>
 	<description>Catch header or footer from third website and include extracted html-code in your jsp-site by using jsp-tag.</description>
 	<url>https://code.google.com/p/webcatch-tag/</url>
 
 	<organization>
 		<name>Christian Klisch</name>
+		<url>http://www.christian-klisch.de</url>
 	</organization>
 
 	<properties>
@@ -27,8 +28,12 @@
 	<developers>
 		<developer>
 			<name>Christian Klisch</name>
+			<url>http://www.christian-klisch.de</url>
 		</developer>
 	</developers>
+
+	<scm>
+	</scm>
 
 	<dependencies>
 		<dependency>
