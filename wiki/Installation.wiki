@@ -16,6 +16,24 @@ Steps to do:
 
 A newer version will be released as maven-dependency which you can add to your dependency-section in your project's pom.xml.
 
+== Include which part? ==
+
+You can select by html-tag-attributes, which part of the external website you want to include. The following example is the html-code of a footer:
+
+{{{
+<html>
+  <body>
+    <div id="main">
+      This is the main part
+    </div>
+    <div id="footer" class="column span">
+      Created at 12.01.2013 from M.Person
+    </div>
+  </body>
+</html>
+}}}
+
+
 == How to use in jsp-file ==
 
 Add at the beginning of your jsp-file:
@@ -26,4 +44,14 @@ Add at the beginning of your jsp-file:
 Add in your jsp-code the WebCatch-Tag:
 {{{
 <ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="main" />
+}}}
+
+This will include:
+{{{
+    <div id="main">
+      This is the main part
+    </div>
+    <div id="footer" class="column span">
+      Created at 12.01.2013 from M.Person
+    </div>
 }}}
