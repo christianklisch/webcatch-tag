@@ -10,7 +10,7 @@ Follow the instruction of this howto to install and use the WebCatch-Tag in your
 Steps to do:
    * Download newest version of the WebCatch-Tag jar-file
    * Copy this file to your lib-directory in e.g. ./WEB-INF
-   * Add this new jsp-tag into your jsp-file
+   * Follow instructions at WebCatch
 
 == Add as maven-dependency ==
 
