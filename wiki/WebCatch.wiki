@@ -1,6 +1,6 @@
-#summary What is the WebCatch-tag
+#summary What is the !WebCatch-tag
 
-= What is the WebCatch-tag =
+= What is the !WebCatch-tag =
 
 The WebCatch-tag is a jsp-tag to include parts of an external website (e.g. footer). In case of a change on the external website the selected website-part will be loaded by your webserver and the extracted HTML-code is included into your jsp-file.
 
