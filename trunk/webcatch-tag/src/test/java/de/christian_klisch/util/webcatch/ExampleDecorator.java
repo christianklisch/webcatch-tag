@@ -18,7 +18,7 @@ package de.christian_klisch.util.webcatch;
 
 /**
  * Example decorator implementation for <em>WebCatchDecorator</em>. This example
- * manipulates the HTML-code by change the character 'F' into 'W'.
+ * manipulates the HTML-code by change the character 'oo' into 'uu'.
  * 
  * @author klisch
  * 
