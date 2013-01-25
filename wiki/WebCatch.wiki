@@ -1,4 +1,5 @@
 #summary What is the !WebCatch-tag
+#labels Featured
 
 = What is the !WebCatch-tag =
 
