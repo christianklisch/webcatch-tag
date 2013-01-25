@@ -1,14 +1,14 @@
 #summary How to install and use the WebCatch-tag
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 = Introduction =
 
-Follow the instruction of this howto to install and use the WebCatch-Tag in your webapplication.
+Follow the instruction of this howto to install and use the WebCatch-tag in your webapplication.
 
 
 == Import as jar-File ==
 
 Steps to do:
-   * Download newest version of the WebCatch-Tag jar-file
+   * Download newest version of the WebCatch-tag jar-file
    * Copy this file to your lib-directory in e.g. ./WEB-INF
    * Follow instructions at WebCatch
 
