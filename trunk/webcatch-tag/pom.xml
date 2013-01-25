@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.christian_klisch</groupId>
 	<artifactId>webcatch</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>WebCatch</name>
 	<description>Catch header or footer from third website and include extracted html-code in your jsp-site by using jsp-tag.</description>
 	<url>https://code.google.com/p/webcatch-tag/</url>
@@ -32,8 +32,16 @@
 		</developer>
 	</developers>
 
-	<scm>
-	</scm>
+  <issueManagement>
+    <system>Google Code</system>
+    <url>https://code.google.com/p/webcatch-tag/issues/list</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:svn:http://webcatch-tag.googlecode.com/svn/trunk/</connection>
+    <developerConnection>scm:svn:https://webcatch-tag.googlecode.com/svn/trunk/</developerConnection>
+    <url>https://code.google.com/p/webcatch-tag/source/browse/</url>
+  </scm>
 
 	<dependencies>
 		<dependency>
@@ -49,5 +57,36 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+  <!-- https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven mvn release:perform -Darguments=-Dgpg.passphrase=PASSPHRASE-->
+  <profiles>
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
