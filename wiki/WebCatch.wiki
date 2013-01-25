@@ -2,7 +2,7 @@
 
 = What is the !WebCatch-tag =
 
-The WebCatch-tag is a jsp-tag to include parts of an external website (e.g. footer). In case of a change on the external website the selected website-part will be loaded by your webserver and the extracted HTML-code is included into your jsp-file.
+The !WebCatch-tag is a jsp-tag to include parts of an external website (e.g. footer). In case of a change on the external website the selected website-part will be loaded by your webserver and the extracted HTML-code is included into your jsp-file.
 
 
 == Include which part? ==
@@ -30,7 +30,7 @@ Add at the beginning of your jsp-file:
 <%@ taglib uri="http://www.christian-klisch.de" prefix="ck"%>
 }}}
 
-Add in your jsp-code the WebCatch-Tag:
+Add in your jsp-code the !WebCatch-tag:
 {{{
 <ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="main" />
 }}}
@@ -41,3 +41,6 @@ This will include:
       Created at 12.01.2013 from M.Person
     </div>
 }}}
+
+== Manipulate the content ==
+If you need to manipulate the content (e.g. change server-url in link), you have to implement the WebCatchDecorator. 
