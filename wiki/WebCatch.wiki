@@ -26,7 +26,7 @@ You can select by html-tag-attributes, which part of the external website you wa
 
 == How to use in jsp-file ==
 
-Add at the beginning of your jsp-file:
+After [Installation] add at the beginning of your jsp-file:
 {{{
 <%@ taglib uri="http://www.christian-klisch.de" prefix="ck"%>
 }}}
