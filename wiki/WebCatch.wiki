@@ -33,7 +33,7 @@ After [Installation] add at the beginning of your jsp-file:
 
 Add in your jsp-code the !WebCatch-tag:
 {{{
-<ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="main" />
+<ck:webcatch source="http://www.christian-klisch.de" htmltag="div" attribute="id" value="footer" />
 }}}
 
 This will include:
